@@ -1,0 +1,5 @@
+first step for ASP.NET on MIS531
+https://d2l.arizona.edu/d2l/le/content/596592/viewContent/5560023/View
+
+問題だ！これはやばい！！！Visual studio 2017 community editionはSQLDeveloperとのコネクションには使えない
+https://community.oracle.com/thread/4061638
