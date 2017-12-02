@@ -27,6 +27,18 @@
             <!-- the source of fee images: https://dabuttonfactory.com/ -->
         <table cellpadding="15" >
 	        <tbody>
+
+	        	<tr>
+			        <td>
+                        <a href="CalcWithheldTax.aspx"><img src="images/button_calculate-withheld-tax.png" /></a>
+			        </td>
+			        <td>
+			        	<img src="images/button_calculate-accrual-revenue.png" />
+			        </td>
+			        <td>
+
+			        </td>
+			    </tr>
 		        <tr>
 			        <td>
                         <a href="CreateInvoice.aspx"><img src="images/button_create-invoice.png" /></a>
@@ -50,40 +62,43 @@
 
 		        </tr>
 		        <tr>
-			        <td><img src="images/button_calculate-accrual-revenue.png" /></td>
-			        <td></td>
 			        <td>
-
+			        </td>
+			        <td>
+			        </td>
+			        <td>
 			        </td>
 
 		        </tr>
 		        <tr>
 			        <td>
-                        <a href="CalcWithheldTax.aspx"><img src="images/button_calculate-withheld-tax.png" /></a>
 			        </td>
 			        <td>
-
-
-
 			        </td>
 			        <td>
-
 			        </td>
 
 		        </tr>
 		        <tr>
 			        <td><img src="images/button_calculate-bonus.png" /></td>
-			        <td><img src="images/button_view-update-bonus.png" /></td>
+			        <td>
+                        <a href="ViewEmployees.aspx"><img src="images/button_view-update-bonus.png" /></a>
+                    </td>
 			        <td>
 
 			        </td>
 
 		        </tr>
 		        <tr>
-			        <td><img src="images/button_register-employees.png" /></td>
-			        <td><img src="images/button_view-update-employees.png" /></td>
 			        <td>
+                        <img src="images/button_register-employees.png" />
 
+			        </td>
+			        <td>
+                        <a href="UpdateEmployees.aspx"><img src="images/button_update-employees.png" /></a>
+			        </td>
+			        <td>
+                        <a href="ViewEmployees.aspx"><img src="images/button_view-employees.png" /></a>
 			        </td>
 
 		        </tr>

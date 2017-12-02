@@ -14,8 +14,13 @@ div.logo1 > img{
 
 table > tbody > tr > td {
     margin: 5px;
-    vertical-align:top
+    vertical-align:top;
 }
+
+div.tableNameTitle{
+    padding-left:100px;
+}
+
 
 /*customized CSS end*/
 /***********************************/

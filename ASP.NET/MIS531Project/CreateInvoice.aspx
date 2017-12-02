@@ -8,7 +8,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-        <h1 class="auto-style1">Create Invoice</h1>
+        <h1 class="auto-style1"><font size="7">Create Invoice</font></h1>
+        <font size="5"><div class="tableNameTitle">Insert data into INVOICES table.</div></font> <br />
+        
         <p style="text-align: center">Inser the new invoice data by clicking &quot;New&quot; under the table. 
             <br/> The total invoice amount is the total of  bill_amount,  disbursement_amount and typing_fee subtracting - withheld_income_tax</p>
         <p style="text-align: center">&nbsp;</p>
@@ -82,11 +84,11 @@
             </asp:SqlDataSource>
                 For &quot;PAID_OR_NOT&quot;, please filling Y (paid already) or N (not paid yet). <br/>
                 The format of ISSUE_DATE and DUE_DATE is DD-MMM-YYYY (e.g. 31-DEC-2017)<br /> Do not fill in partners employee ID but staff&#39;s ID. It will show an error screen. Please insert the data again in this case.</asp:Panel>
-
-        
+   
         <p style="text-align: center">&nbsp;</p>
-        <p style="text-align: center">
+        <font size="5"><div class="tableNameTitle">Insert data into CONTRACT_INVOICES table.</div></font> <br />
 
+        <p style="text-align: center">
             <asp:DetailsView ID="CreateCOntractInvoiceDetailsView" runat="server" Height="50px" Width="125px" AutoGenerateRows="False" CellPadding="4" DataKeyNames="INVOICE_NUMBER" DataSourceID="CreateContractInvoieSQL" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
                 <AlternatingRowStyle BackColor="White" />
                 <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
@@ -119,6 +121,24 @@
 
         </p>
         
+        <p style="text-align: center">&nbsp;</p>
+        <font size="5"><div class="tableNameTitle">Insert data into NON_CONTRACT_INVOICES table.</div>
+        </font>
+        <br />
+        <asp:DetailsView ID="DetailsView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" Height="50px" HorizontalAlign="Center" Width="125px">
+            <AlternatingRowStyle BackColor="White" />
+            <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
+            <EditRowStyle BackColor="#7C6F57" />
+            <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <RowStyle BackColor="#E3EAEB" />
+        </asp:DetailsView>
+        <asp:SqlDataSource ID="CreateNonContractInvoiceSQL" runat="server"></asp:SqlDataSource>
+        <br />
+        <br />
+
 
 </asp:Content>
 
