@@ -1,0 +1,22 @@
+/***********************************/
+/*customized CSS start*/
+div.logo1 > img{
+    display: block !important;
+    margin: 0 auto !important;
+    width: 30% !important;
+    height: 30% !important;
+}
+
+.MainPageIntroduction{
+    text-align: center;
+    margin : 0px 100px 0px 100px !important; 
+}
+
+table > tbody > tr > td {
+    margin: 5px;
+    vertical-align:top
+}
+
+/*customized CSS end*/
+/***********************************/
+
