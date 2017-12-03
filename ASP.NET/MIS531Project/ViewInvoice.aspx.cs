@@ -8,7 +8,9 @@ using System.Web.UI.WebControls;
 //packages necessary to connect the database for searching
 using System.Data;
 using System.Data.SqlClient;
+using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
+
 
 
 public partial class ViewInvoice : System.Web.UI.Page
@@ -16,11 +18,14 @@ public partial class ViewInvoice : System.Web.UI.Page
     //Connect to the DB for searching
     //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SearchConnectionString"].ConnectionString);
     //I tried both below but both failed with different errors...
+    //The following connection string info is found at Server Explore -> Properties
     //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["Data Source=orcl;Persist Security Info=True;User ID=sealions;Password=fAj5JD,q0; Unicode=True"].ConnectionString);
-    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
+    //Instead of System.Data.SqlClient.SqlConnection,  Use System.Data.OracleClient.OracleConnection
+    //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
 
+    OracleConnection con = new OracleConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
 
-
+    //userful source: http://hensa40.cutegirl.jp/archives/838
 
 
     protected void Page_Load(object sender, EventArgs e)
@@ -151,19 +156,29 @@ public partial class ViewInvoice : System.Web.UI.Page
             "
             ;
 
-        SqlCommand comm = new SqlCommand(find, con);
+
+
+        //commented out just for presentation.This part includes bugs.
+        //SqlCommand comm = new SqlCommand(find, con);
+        OracleCommand comm = new OracleCommand(find, con);
+
         //this may be correct
         //comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.NVarChar).Value = TextBoxIssueDateStart.Text;
         //comm.Parameters.Add("@TextBoxIssueDateEnd", SqlDbType.NVarChar).Value = TextBoxIssueDateEnd.Text;
-        comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.Date).Value = TextBoxIssueDateStart.Text;
+        //There is unsolved bug here ...
+        comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.Date).Value = TextBoxIssueDateStart.Text.ToString();
         comm.Parameters.Add("@TextBoxIssueDateEnd", SqlDbType.Date).Value = TextBoxIssueDateEnd.Text;
 
         //Open up the connection
         con.Open();
         comm.ExecuteNonQuery();
         //establish the adapter, establishing the connection to the gridview in the front end page
-        SqlDataAdapter da = new SqlDataAdapter();
+        //SqlDataAdapter da = new SqlDataAdapter();
+        OracleDataAdapter da = new OracleDataAdapter();
+
         da.SelectCommand = comm;
+
+
         DataSet ds = new DataSet();
         //The column name to filter
         da.Fill(ds, "ISSUE_DATE");

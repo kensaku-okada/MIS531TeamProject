@@ -36,12 +36,13 @@ FROM &quot;INVOICES&quot;
         <div id="dateStart"> 
             Issue Date: 
             <asp:TextBox ID="TextBoxIssueDateStart" runat="server" OnTextChanged="TextBoxIssueDateStart_TextChanged"></asp:TextBox>
-            <asp:ImageButton ID="TextBoxIssueDateStartIcon" runat="server" ImageUrl="~/Scripts/images/calendarIcon.png" width="30px" height="30px" OnClick="TextBoxIssueDateStartIcon_Click" />
+            <asp:ImageButton ID="TextBoxIssueDateStartIcon" runat="server" ImageUrl="images/calendarIcon.png" width="30px" height="30px" OnClick="TextBoxIssueDateStartIcon_Click" />
+            
              &nbsp; ~ &nbsp; 
             <asp:TextBox ID="TextBoxIssueDateEnd" runat="server"></asp:TextBox>
-            <asp:ImageButton ID="TextBoxIssueDateEndIcon" runat="server" ImageUrl="~/Scripts/images/calendarIcon.png" width="30px" height="30px" OnClick="TextBoxIssueDateEndIcon_Click" />
+            <asp:ImageButton ID="TextBoxIssueDateEndIcon" runat="server" ImageUrl="images/calendarIcon.png" width="30px" height="30px" OnClick="TextBoxIssueDateEndIcon_Click" />
             &nbsp;&nbsp;&nbsp;
-            <asp:Button ID="ButtonSearchByIssueDate" runat="server" Text="Search by Issue Date" OnClick="ButtonSearchByIssueDate_Click" />
+            <asp:Button ID="ButtonSearchByIssueDate" runat="server" Text="Search by Issue Date" OnClick="ButtonSearchByIssueDate_Click" /> This filtering function is not working yet...
             
         <asp:Calendar ID="CalendarStartDate" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="CalendarStartDate_SelectionChanged">
             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
@@ -203,6 +204,10 @@ FROM &quot;INVOICES&quot;
                 <asp:ControlParameter ControlID="PaidOrNotPaid" Name="PAID_OR_NOT" PropertyName="SelectedValue" Type="Char" />
             </SelectParameters>
         </asp:SqlDataSource>
+
+
+        <br />
+        <br />
 
 
         <br />

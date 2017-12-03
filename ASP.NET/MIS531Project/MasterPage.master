@@ -26,8 +26,8 @@
     </section>
     <footer>
         <div align="center">
-            <img src="images/button_back.png" />
-            &nbsp&nbsp
+<%--            <img src="images/button_back.png" />
+            &nbsp&nbsp--%>
             <a href="MainPage_new.aspx"><img src="images/button_main-menu.png" /></a>
         </div>
     </footer>

@@ -36,7 +36,16 @@
 			        	<img src="images/button_calculate-accrual-revenue.png" />
 			        </td>
 			        <td>
-
+                        <a href="ViewEmployees.aspx"><img src="images/button_view-update-bonus.png" /></a>
+			        </td>
+			    </tr>
+                <tr>
+			        <td>
+                        <a href="CalcTaxtableIncome.aspx"><img src="images/button_calculate-taxtable-income.png" /></a>
+			        </td>
+			        <td>
+			        </td>
+			        <td>
 			        </td>
 			    </tr>
 		        <tr>
@@ -50,57 +59,150 @@
                         <a href="ViewInvoice.aspx"><img src="images/button_view-invoice.png" /></a>
 			        </td>
 		        </tr>
-		        <tr>
-			        <td><img src="images/button_calculate-client-payment.png" /></td>
+                <tr>
 			        <td>
-                        <img src="images/button_view-update-client-payment.png" /><br/>
-                        <span class="auto-style2">View or update the money Elite received from clitents</span>
+                        <a href="CreateContract.aspx"><img src="images/button_create-contracts.png" /></a>
 			        </td>
 			        <td>
-
+                       <a href="UpdateContract.aspx"><img src="images/button_update-contracts.png" /></a>
 			        </td>
+			        <td>
+                        <a href="ViewContract.aspx"><img src="images/button_view-contracts.png" /></a>
+			        </td>
+		        </tr>
 
+                <tr>
+			        <td>
+                        <img src="images/button_create-contract-details.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_update-contract-details.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-contract-details.png" />
+			        </td>
 		        </tr>
 		        <tr>
 			        <td>
+                        <img src="images/button_create-client-payment.png" />
 			        </td>
 			        <td>
+                        <img src="images/button_update-client-payment.png" /><br/>
+                        <div style="text-align: left">
+                            <span class="auto-style2">
+                                &nbsp;&nbsp; Update the money Elite receives from clitents (MONEY_RECEIVED)
+                            </span>
+                        </div>
 			        </td>
 			        <td>
+                        <img src="images/button_view-client-payment.png" /><br/>
+                        <div style="text-align: left">
+                            <span class="auto-style2">
+                                &nbsp;&nbsp; View the money Elite receives from clitents (MONEY_RECEIVED)
+                            </span>
+                        </div>
 			        </td>
-
 		        </tr>
 		        <tr>
 			        <td>
+                        <img src="images/button_create-receipts.png" />
 			        </td>
 			        <td>
+                        <img src="images/button_update-receipts.png" />
 			        </td>
 			        <td>
+                        <img src="images/button_view-receipts.png" />
 			        </td>
+		        </tr>
+                <tr>
+			        <td>
+                        <img src="images/button_create-external-payment.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_update-external-payment.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-external-payment.png" />
+			        </td>
+		        </tr>
+                <tr>
+			        <td>
+                        <img src="images/button_create-payment-out.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_update-payment-out.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-payment-out.png" />
+			        </td>
+		        </tr>
 
+
+                <%------------------Master Setting start----------------------%>
+		        <tr>
+			        <td>
+                       <font size="6"><br/><br/>Master settings</font> 
+			        </td>
+		        </tr>
+                <%------------------Master Setting end----------------------%>
+
+
+		        <tr>
+			        <td>
+                        <img src="images/button_register-clients.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-update-client.png" />
+			        </td>
+			        <td>
+			        </td>
 		        </tr>
 		        <tr>
-			        <td><img src="images/button_calculate-bonus.png" /></td>
 			        <td>
-                        <a href="ViewEmployees.aspx"><img src="images/button_view-update-bonus.png" /></a>
+                        <img src="images/button_create-service.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-update-service.png" />
+			        </td>
+			        <td>
+			        </td>
+		        </tr>
+                <tr>
+			        <td>
+                        <img src="images/button_register-employee.png" />
+			        </td>
+                    <td>
+                        <img src="images/button_view-update-employee.png" />
                     </td>
-			        <td>
 
-			        </td>
-
-		        </tr>
-		        <tr>
-			        <td>
-                        <img src="images/button_register-employees.png" />
-
-			        </td>
-			        <td>
+<%--			        <td>
                         <a href="UpdateEmployees.aspx"><img src="images/button_update-employees.png" /></a>
 			        </td>
 			        <td>
                         <a href="ViewEmployees.aspx"><img src="images/button_view-employees.png" /></a>
+			        </td>--%>
+		        </tr>
+		        <tr>
+			        <td>
+                        <img src="images/button_create-payment.png" /><br/>
+                        <span class="auto-style2">Register a new payment method</span>
 			        </td>
-
+			        <td>
+                        <img src="images/button_view-update-payment.png" /><br/>
+                        <span class="auto-style2">View or update payment methods</span>
+			        </td>
+			        <td>
+			        </td>
+		        </tr>
+		        <tr>
+			        <td>
+                        <img src="images/button_create-certificates.png" />
+			        </td>
+			        <td>
+                        <img src="images/button_view-update-certificates.png" />
+			        </td>
+			        <td>
+			        </td>
 		        </tr>
 	        </tbody>
         </table>
