@@ -9,9 +9,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <h1 class="auto-style1">Create Invoice</h1>
+    <h1 class="auto-style1"><font size="7">View Invoice</font></h1>
     <p>
-        Filter paid/unpaid invoices</p>
+        <font size="5"><div class="tableNameTitle">Filter paid/unpaid invoices</div></font>
     <p>
         <asp:DropDownList ID="PaidOrNotPaid" runat="server" AutoPostBack="True" DataSourceID="invoicePaidOrNotSQL" DataTextField="PAID_OR_NOT_Word" DataValueField="PAID_OR_NOT" OnSelectedIndexChanged="PaidOrNotPaid_SelectedIndexChanged">
         </asp:DropDownList>
@@ -77,7 +77,7 @@ FROM &quot;INVOICES&quot;
 
         <%--this does not work. AutoGenerateColumns="False" should be True--%>
          <%--<asp:GridView ID="InvoiceViewNoFilter" runat="server" CellPadding="4" DataSourceID="ViewINvoiceSQL" ForeColor="#333333" GridLines="None" Width="542px" PageSize="15" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewNoFilter_SelectedIndexChanged" AutoGenerateColumns="False">--%>
-        <asp:GridView ID="InvoiceViewNoFilter" runat="server" CellPadding="4" DataSourceID="ViewINvoiceSQL" ForeColor="#333333" GridLines="None" Width="542px" PageSize="15" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewNoFilter_SelectedIndexChanged" AutoGenerateColumns="True">
+        <asp:GridView ID="InvoiceViewNoFilter" runat="server" CellPadding="4" DataSourceID="ViewINvoiceSQL" ForeColor="#333333" GridLines="None" Width="542px" PageSize="50" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewNoFilter_SelectedIndexChanged" AutoGenerateColumns="True">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
 <%--                <asp:BoundField DataField="INVOICE_NUMBER" HeaderText="INVOICE_NUMBER" SortExpression="INVOICE_NUMBER" />
@@ -136,7 +136,7 @@ FROM &quot;INVOICES&quot;
 
     <asp:Panel ID="Panel2" runat="server">
         <%--<asp:GridView ID="InvoiceViewFiltered" runat="server" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="INVOICE_NUMBER" DataSourceID="ViewInvoiceSQLFiltered" ForeColor="#333333" GridLines="None" PageSize="15" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewFiltered_SelectedIndexChanged">--%>
-        <asp:GridView ID="InvoiceViewFiltered" runat="server" AutoGenerateColumns="True" CellPadding="4" DataKeyNames="INVOICE_NUMBER" DataSourceID="ViewInvoiceSQLFiltered" ForeColor="#333333" GridLines="None" PageSize="15" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewFiltered_SelectedIndexChanged">
+        <asp:GridView ID="InvoiceViewFiltered" runat="server" AutoGenerateColumns="True" CellPadding="4" DataKeyNames="INVOICE_NUMBER" DataSourceID="ViewInvoiceSQLFiltered" ForeColor="#333333" GridLines="None" PageSize="50" AllowPaging="True" AllowSorting="True" OnSelectedIndexChanged="InvoiceViewFiltered_SelectedIndexChanged">
             <AlternatingRowStyle BackColor="White" />
             <Columns>
 <%--                <asp:CommandField ShowSelectButton="True" />

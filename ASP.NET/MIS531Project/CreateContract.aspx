@@ -13,7 +13,13 @@
         <font size="5"><div class="tableNameTitle">Insert data into CONTRACTS table.</div>
         </font> <br />
         
-        <p style="text-align: center">Inser the new invoice data by clicking &quot;New&quot; under the table. 
+        <%--<p style="text-align: center">--%>
+        <p>
+            Insert the new contract data by clicking &quot;New&quot; under the table. <br /> 
+            Input Y (yes) or N (no) in APPROVED item. <br/>
+
+
+
         </p>
 
     <p>

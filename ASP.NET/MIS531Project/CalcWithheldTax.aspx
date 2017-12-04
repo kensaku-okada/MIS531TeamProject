@@ -10,9 +10,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
     <h1 class="auto-style1">Calculate withheld tax</h1>
+    <p>&nbsp;Calculate the montly withheld tax amount &nbsp;</p>
 
 
-    <p> Due date: <asp:TextBox ID="WithHeldTaxIncomeDueDateTextBox" runat="server"></asp:TextBox> &nbsp;&nbsp; <asp:Button ID="CalcWithHeldTaxIncomeButton" runat="server" Text="Calculate" OnClick="CalcWithHeldTaxIncomeButton_Click" />
+    <p> Due date (DD-MMM-YYYY (e.g. 10-Dec-2017 )): <asp:TextBox ID="WithHeldTaxIncomeDueDateTextBox" runat="server"></asp:TextBox> &nbsp;&nbsp; <asp:Button ID="CalcWithHeldTaxIncomeButton" runat="server" Text="Calculate" OnClick="CalcWithHeldTaxIncomeButton_Click" />
         <asp:SqlDataSource ID="CalculateWithheldtaxStoredProcedure" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject %>" ProviderName="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject.ProviderName %>" SelectCommand="CALCULATE_WITHHELD_TAX" SelectCommandType="StoredProcedure" OnSelecting="CalculateWithheldtaxStoredProcedure_Selecting">
             <SelectParameters>
                 <asp:ControlParameter ControlID="WithHeldTaxIncomeDueDateTextBox" Name="DUE_DATE" PropertyName="Text" Type="DateTime" />

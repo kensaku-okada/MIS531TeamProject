@@ -16,7 +16,7 @@
         <p style="text-align: center">You can also delte or update the data by clicking &quot; Edit &quot; or &quot; Delete &quot; on the left side of the table. 
         </p>
         <p style="text-align: center">
-            <asp:GridView ID="ViewContractGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="CONTRACT_ID" DataSourceID="ViewContractSQL" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">
+            <asp:GridView ID="ViewContractGridView" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" DataKeyNames="CONTRACT_ID" DataSourceID="ViewContractSQL" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" PageSize="50">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />

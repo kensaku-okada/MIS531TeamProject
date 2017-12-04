@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <h1 class="auto-style1">Update Invoice</h1>
+    <h1 class="auto-style1"><font size="7"> Update Invoice</font></h1>
 
     <p>
         <asp:DropDownList ID="UpdateInvoiceDropDownList" runat="server" AutoPostBack="True" DataSourceID="UpdateInvocieDropDownSQL" DataTextField="INVOICE_NUMBER" DataValueField="INVOICE_NUMBER">

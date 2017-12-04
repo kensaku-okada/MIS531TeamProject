@@ -10,6 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
+using System.Data.OleDb;
 
 
 
@@ -24,9 +25,11 @@ public partial class ViewInvoice : System.Web.UI.Page
     //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
 
     OracleConnection con = new OracleConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
+    //OleDbConnection con = new OleDbConnection(ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString);
 
     //userful source: http://hensa40.cutegirl.jp/archives/838
-
+    //useful source: https://www.youtube.com/watch?v=JkAIiDWF0HE
+    //useful source: https://www.youtube.com/watch?v=tfISj7UlwEE
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -120,73 +123,104 @@ public partial class ViewInvoice : System.Web.UI.Page
 
     protected void ButtonSearchByIssueDate_Click(object sender, EventArgs e)
     {
+        ////seach tables by clicking the button
+        //string find =
+        //    @"SELECT
+        //    I.INVOICE_NUMBER
+        // , ISSUE_DATE
+        // , PAYMENT_DATE
+        // , COALESCE(com.government_id, ind.ssn) AS & quot; Public ID&quot;
+        // , C.CLIENT_ID
+        // , CLIENT_NAME
+        // , BILL_AMOUNT
+        // , DISBURSEMENT_AMOUNT
+        // , TYPING_FEE
+        // , WITHHELD_INCOME_TAX
+        // , TOTAL_AMOUNT
+        // , paid_or_not, e.emp_id, first_name || last_name as & quot; Employee & quot;
+        //FROM
+        //    INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON(I.INVOICE_NUMBER = M.INVOICE_NUMBER)
+
+        //        LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID)
+
+        //        LEFT OUTER JOIN CLIENTS C ON(I.CLIENT_ID = C.CLIENT_ID)
+
+        //        LEFT OUTER JOIN COMPANIES COM ON(C.CLIENT_ID = COM.CLIENT_ID)
+
+        //        LEFT OUTER JOIN INDIVIDUALS IND ON(C.CLIENT_ID = IND.CLIENT_ID)
+
+        //        LEFT OUTER JOIN EMPLOYEES E ON(I.EMP_ID = E.EMP_ID)
+
+        //    WHERE(&quot; PAID_OR_NOT & quot; = :PAID_OR_NOT)
+
+        //    and ISSUE_DATE between @TextBoxIssueDateStart AND @TextBoxIssueDateEnd
+
+        //    ORDER BY INVOICE_NUMBER
+        //    "
+        //    ;
+
         //seach tables by clicking the button
         string find =
             @"SELECT
             I.INVOICE_NUMBER
 	        , ISSUE_DATE
 	        , PAYMENT_DATE
-	        , COALESCE(com.government_id, ind.ssn) AS & quot; Public ID&quot;
-	        , C.CLIENT_ID
+	        , COALESCE(com.government_id, ind.ssn) AS " + "\"Public ID\"" +
+	        @", C.CLIENT_ID
 	        , CLIENT_NAME
 	        , BILL_AMOUNT
 	        , DISBURSEMENT_AMOUNT
 	        , TYPING_FEE
 	        , WITHHELD_INCOME_TAX
 	        , TOTAL_AMOUNT
-	        , paid_or_not, e.emp_id, first_name || last_name as & quot; Employee & quot;
-        FROM
-            INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON(I.INVOICE_NUMBER = M.INVOICE_NUMBER)
+	        , paid_or_not, e.emp_id, first_name || last_name as " + "\" Employee \"" + 
+            @" FROM
+            INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON (I.INVOICE_NUMBER = M.INVOICE_NUMBER) 
+                LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID) 
+                LEFT OUTER JOIN CLIENTS C ON (I.CLIENT_ID = C.CLIENT_ID) 
+                LEFT OUTER JOIN COMPANIES COM ON (C.CLIENT_ID = COM.CLIENT_ID) 
+                LEFT OUTER JOIN INDIVIDUALS IND ON (C.CLIENT_ID = IND.CLIENT_ID) 
+                LEFT OUTER JOIN EMPLOYEES E ON (I.EMP_ID = E.EMP_ID) 
+            WHERE (&quot; PAID_OR_NOT & quot; = :PAID_OR_NOT) 
 
-                LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID)
+            and ISSUE_DATE between " + TextBoxIssueDateStart.Text + " AND " +  TextBoxIssueDateEnd.Text  +
 
-                LEFT OUTER JOIN CLIENTS C ON(I.CLIENT_ID = C.CLIENT_ID)
-
-                LEFT OUTER JOIN COMPANIES COM ON(C.CLIENT_ID = COM.CLIENT_ID)
-
-                LEFT OUTER JOIN INDIVIDUALS IND ON(C.CLIENT_ID = IND.CLIENT_ID)
-
-                LEFT OUTER JOIN EMPLOYEES E ON(I.EMP_ID = E.EMP_ID)
-
-            WHERE(&quot; PAID_OR_NOT & quot; = :PAID_OR_NOT)
-
-            and ISSUE_DATE between @TextBoxIssueDateStart AND @TextBoxIssueDateEnd
-
-            ORDER BY INVOICE_NUMBER
-            "
+            " ORDER BY INVOICE_NUMBER"
             ;
 
+        //Open up the connection
+        con.Open();
 
 
         //commented out just for presentation.This part includes bugs.
         //SqlCommand comm = new SqlCommand(find, con);
         OracleCommand comm = new OracleCommand(find, con);
+        //OleDbCommand comm = new OleDbCommand(find, con);
 
         //this may be correct
         //comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.NVarChar).Value = TextBoxIssueDateStart.Text;
         //comm.Parameters.Add("@TextBoxIssueDateEnd", SqlDbType.NVarChar).Value = TextBoxIssueDateEnd.Text;
-        //There is unsolved bug here ...
-        comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.Date).Value = TextBoxIssueDateStart.Text.ToString();
-        comm.Parameters.Add("@TextBoxIssueDateEnd", SqlDbType.Date).Value = TextBoxIssueDateEnd.Text;
 
-        //Open up the connection
-        con.Open();
+        //There is unsolved bug here ...
+        //comm.Parameters.Add("@TextBoxIssueDateStart", SqlDbType.Date).Value = TextBoxIssueDateStart.Text.ToString();
+        //comm.Parameters.Add("@TextBoxIssueDateEnd", SqlDbType.Date).Value = TextBoxIssueDateEnd.Text;
+
         comm.ExecuteNonQuery();
+
         //establish the adapter, establishing the connection to the gridview in the front end page
         //SqlDataAdapter da = new SqlDataAdapter();
-        OracleDataAdapter da = new OracleDataAdapter();
+        //OracleDataAdapter da = new OracleDataAdapter();
 
-        da.SelectCommand = comm;
+        //da.SelectCommand = comm;
 
+        //DataSet ds = new DataSet();
+        ////The column name to filter
+        //da.Fill(ds, "ISSUE_DATE");
 
-        DataSet ds = new DataSet();
-        //The column name to filter
-        da.Fill(ds, "ISSUE_DATE");
-
-        //link it to the grid
-        InvoiceViewFiltered.DataSource = ds;
-        //Bind the data to the grid view
-        InvoiceViewFiltered.DataBind();
+        ////link it to the grid
+        //InvoiceViewFiltered.DataSource = ds;
+        ////Bind the data to the grid view
+        //InvoiceViewFiltered.DataBind();
 
         //close the connection
         con.Close();

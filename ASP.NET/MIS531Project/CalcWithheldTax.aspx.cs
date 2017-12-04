@@ -30,12 +30,12 @@ public partial class CalcWithheldTax : System.Web.UI.Page
     {
 
         //make a beep sound
-        System.Media.SystemSounds.Beep.Play();
-        MessageBox.Show("the stored procedure is called", "", MessageBoxButtons.OK);
+        //System.Media.SystemSounds.Beep.Play();
+        //MessageBox.Show("the stored procedure started", "", MessageBoxButtons.OK);
 
         //connect the button with the data source
         //ToolboxDataAttribute: make sure if this works
-        calculate_withheld_tax_grid_viewSQL.Select(DataSourceSelectArguments.Empty);
+        CalculateWithheldtaxStoredProcedure.Select(DataSourceSelectArguments.Empty);
 
         //Theme following DB connection fails...
         //string CS = ConfigurationManager.ConnectionStrings["ConnectionStringMIS531TeamProject"].ConnectionString;
@@ -57,8 +57,8 @@ public partial class CalcWithheldTax : System.Web.UI.Page
         //Empty the input textbox empty
         WithHeldTaxIncomeDueDateTextBox.Text = string.Empty;
 
-        System.Media.SystemSounds.Beep.Play();
-        MessageBox.Show("the stored procedure called", "", MessageBoxButtons.OK);
+        //System.Media.SystemSounds.Beep.Play();
+        //MessageBox.Show("the stored procedure for withheld tax income finished", "", MessageBoxButtons.OK);
 
     }
 
