@@ -57,6 +57,6 @@
                 <asp:Parameter Name="CONTRACT_ID" Type="String" />
             </UpdateParameters>
         </asp:SqlDataSource>
-        &nbsp;</p>
+        </p>
 </asp:Content>
 

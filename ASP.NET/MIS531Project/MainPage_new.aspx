@@ -86,15 +86,15 @@
 		        <tr>
 			        <td>
                         <a href="CreatePayment.aspx"><img src="images/button_create-payment.png" /><br/></a>
-                        <span class="auto-style2">Register a new payment (fill in the payment data here when Elite pay or receive money)</span>
+                        <span class="auto-style2">Register a new payment (fill in the payment data here <br/> when Elite pay or receive money)</span>
 			        </td>
 			        <td>
                         <a href="UpdatePayment.aspx"><img src="images/button_update-payment.png" /><br/></a>
-                        <span class="auto-style2">Update a existing payment (all the payment data when Elite pay or receive money) </span>
+                        <span class="auto-style2">Update a existing payment (all the payment data when <br/> Elite pay or receive money) </span>
 			        </td>
 			        <td>
                         <a href="ViewPayment.aspx"><img src="images/button_view-payment.png" /><br/></a>
-                        <span class="auto-style2">View payment methods (all the payment data when Elite pay or receive money)</span>
+                        <span class="auto-style2">View payment methods (all the payment data when Elite pay <br/> or receive money)</span>
 			        </td>
 		        </tr>
 		        <tr>
@@ -136,28 +136,26 @@
 		        </tr>
                 <tr>
 			        <td>
-                        <img src="images/button_create-payment-out.png" />
+                        <a href="CreatePaymentOut.aspx"><img src="images/button_create-payment-out.png" /></a>
 			        </td>
 			        <td>
-                        <img src="images/button_update-payment-out.png" />
+                        <a href="UpdatePaymentOut.aspx"><img src="images/button_update-payment-out.png" /></a>
 			        </td>
 			        <td>
-                        <img src="images/button_view-payment-out.png" />
+                        <a href="ViewPaymentOut.aspx"><img src="images/button_view-payment-out.png" /></a>
 			        </td>
 		        </tr>
                 <tr>
 			        <td>
-                        <img src="images/button_create-external-payment.png" />
+                        <a href="CreateExternalPayment.aspx"><img src="images/button_create-external-payment.png" /></a>
 			        </td>
 			        <td>
-                        <img src="images/button_update-external-payment.png" />
+                        <a href="UpdateExternalPayment.aspx"><img src="images/button_update-external-payment.png" /></a>
 			        </td>
 			        <td>
-                        <img src="images/button_view-external-payment.png" />
+                        <a href="ViewExternalPayment.aspx"><img src="images/button_view-external-payment.png" /></a>
 			        </td>
 		        </tr>
-
-
 
                 <%------------------Master Setting start----------------------%>
 		        <tr>
@@ -180,7 +178,7 @@
 		        </tr>
                 <tr>
 			        <td>
-                        <img src="images/button_view-bonus-pay.png" />
+                        <a href="ViewUpdateBonusPay.aspx"><img src="images/button_view-bonus-pay.png" /></a>
 			        </td>
 			        <td>
 			        </td>
@@ -188,11 +186,9 @@
 			        </td>
 		        </tr>
 
-
-
 		        <tr>
 			        <td>
-                        <img src="images/button_create-service.png" />
+                        <a href="CreateService.aspx"><img src="images/button_create-service.png" /></a>
 			        </td>
 			        <td>
                         <a href="ViewUpdateService.aspx"><img src="images/button_view-update-service.png" /></a>
@@ -202,10 +198,10 @@
 		        </tr>
                 <tr>
 			        <td>
-                        <img src="images/button_register-employee.png" />
+                        <a href="CreateEmployee.aspx"><img src="images/button_register-employee.png" /></a>
 			        </td>
                     <td>
-                        <img src="images/button_view-update-employee.png" />
+                        <a href="ViewUpdateEmployee.aspx"><img src="images/button_view-update-employee.png" /></a>
                     </td>
 
 <%--			        <td>
@@ -217,35 +213,56 @@
 		        </tr>
 		        <tr>
 			        <td>
-                        <img src="images/button_create-certificates.png" />
+                        <img src="images/button_create-certificates.png" /> <br/> In progress...
 			        </td>
 			        <td>
-                        <img src="images/button_view-update-certificates.png" />
+                        <img src="images/button_view-update-certificates.png" /> <br/> In progress...
 			        </td>
 			        <td>
 			        </td>
 		        </tr>
                 <tr>
 			        <td>
-                        <img src="images/button_create-certificate-detail.png" />
+                        <img src="images/button_create-certificate-detail.png" /> <br/> In progress...
 			        </td>
 			        <td>
-                        <img src="images/button_update-certificate-detail.png" />
+                        <img src="images/button_update-certificate-detail.png" /> <br/> In progress...
 			        </td>
 			        <td>
-                        <img src="images/button_view-certificate-detail.png" />
+                        <img src="images/button_view-certificate-detail.png" /> <br/> In progress...
 			        </td>
 		        </tr>
 		        <tr>
 			        <td>
-                        <img src="images/button_create-external-agency.png" />
+                        <a href="CreateExternalAgency.aspx"><img src="images/button_create-external-agency.png" /> </a>
 			        </td>
 			        <td>
-                        <img src="images/button_view-update-external-agency.png" />
+                        <a href="ViewUpdateExternalAgency.aspx"><img src="images/button_view-update-external-agency.png" /></a>
 			        </td>
 			        <td>
 			        </td>
 		        </tr>
+		        <tr>
+			        <td>
+                        <img src="images/button_create-training-program.png" /> <br/>In progress...
+			        </td>
+			        <td>
+                        <img src="images/button_view-training-program.png" /> <br/>In progress...
+			        </td>
+			        <td>
+			        </td>
+		        </tr>
+		        <tr>
+			        <td>
+                        <img src="images/button_create-feedback.png" /> <br/>In progress...
+			        </td>
+			        <td>
+                        <img src="images/button_view-update-feedback.png" /> <br/>In progress...
+			        </td>
+			        <td>
+			        </td>
+		        </tr>
+
 
 
 

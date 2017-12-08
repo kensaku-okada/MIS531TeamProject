@@ -13,7 +13,9 @@
         <font size="5"><div class="tableNameTitle">Insert data into CONTRACT_DETAILS table.</div>
         </font> 
         
-        <p style="text-align: center">Insert the new contract detail data (the service information to a contract) by clicking &quot; New &quot; under the table. 
+        <p>Insert the new contract detail data (the service information to a contract) by clicking &quot; New &quot; under the table. <br/>
+            The format of START_DATE and END_DATE is DD-MMM-YYYY (e.g. 31-Dec-2017). <br/>
+            The unit of SERVICE_FEE is New Taiwan Dollar.  
         </p>
 
 

@@ -159,34 +159,72 @@ public partial class ViewInvoice : System.Web.UI.Page
         //    "
         //    ;
 
+
         //seach tables by clicking the button
         string find =
             @"SELECT
             I.INVOICE_NUMBER
-	        , ISSUE_DATE
-	        , PAYMENT_DATE
-	        , COALESCE(com.government_id, ind.ssn) AS " + "\"Public ID\"" +
-	        @", C.CLIENT_ID
-	        , CLIENT_NAME
-	        , BILL_AMOUNT
-	        , DISBURSEMENT_AMOUNT
-	        , TYPING_FEE
-	        , WITHHELD_INCOME_TAX
-	        , TOTAL_AMOUNT
-	        , paid_or_not, e.emp_id, first_name || last_name as " + "\" Employee \"" + 
-            @" FROM
-            INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON (I.INVOICE_NUMBER = M.INVOICE_NUMBER) 
-                LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID) 
-                LEFT OUTER JOIN CLIENTS C ON (I.CLIENT_ID = C.CLIENT_ID) 
-                LEFT OUTER JOIN COMPANIES COM ON (C.CLIENT_ID = COM.CLIENT_ID) 
-                LEFT OUTER JOIN INDIVIDUALS IND ON (C.CLIENT_ID = IND.CLIENT_ID) 
-                LEFT OUTER JOIN EMPLOYEES E ON (I.EMP_ID = E.EMP_ID) 
-            WHERE (&quot; PAID_OR_NOT & quot; = :PAID_OR_NOT) 
+         , ISSUE_DATE
+         , PAYMENT_DATE
+         , COALESCE(COM.government_id, IND.ssn) AS "" Public ID &quot ""
+         , C.CLIENT_ID
+         , CLIENT_NAME
+         , BILL_AMOUNT
+         , DISBURSEMENT_AMOUNT
+         , TYPING_FEE
+         , WITHHELD_INCOME_TAX
+         , TOTAL_AMOUNT
+         , paid_or_not, e.emp_id, first_name || last_name as "" Employee ""
+        FROM
+            INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON(I.INVOICE_NUMBER = M.INVOICE_NUMBER)
 
-            and ISSUE_DATE between " + TextBoxIssueDateStart.Text + " AND " +  TextBoxIssueDateEnd.Text  +
+                LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID)
 
-            " ORDER BY INVOICE_NUMBER"
+                LEFT OUTER JOIN CLIENTS C ON(I.CLIENT_ID = C.CLIENT_ID)
+
+                LEFT OUTER JOIN COMPANIES COM ON(C.CLIENT_ID = COM.CLIENT_ID)
+
+                LEFT OUTER JOIN INDIVIDUALS IND ON(C.CLIENT_ID = IND.CLIENT_ID)
+
+                LEFT OUTER JOIN EMPLOYEES E ON(I.EMP_ID = E.EMP_ID)
+
+            WHERE (""PAID_OR_NOT"" = :PAID_OR_NOT) 
+
+            and ISSUE_DATE between " + TextBoxIssueDateStart.Text + " AND " + TextBoxIssueDateEnd.Text +
+
+            @" ORDER BY INVOICE_NUMBER
+            
+            "
             ;
+
+        ////seach tables by clicking the button
+        //string find =
+        //    @"SELECT
+        //    I.INVOICE_NUMBER
+        // , ISSUE_DATE
+        // , PAYMENT_DATE
+        // , COALESCE(com.government_id, ind.ssn) AS " + "\"Public ID\"" +
+        // @", C.CLIENT_ID
+        // , CLIENT_NAME
+        // , BILL_AMOUNT
+        // , DISBURSEMENT_AMOUNT
+        // , TYPING_FEE
+        // , WITHHELD_INCOME_TAX
+        // , TOTAL_AMOUNT
+        // , paid_or_not, e.emp_id, first_name || last_name as " + "\" Employee \"" + 
+        //    @" FROM
+        //    INVOICES I LEFT OUTER JOIN MONEY_RECEIVED M ON (I.INVOICE_NUMBER = M.INVOICE_NUMBER) 
+        //        LEFT OUTER JOIN PAYMENTS P ON (P.PAYMENT_ID = M.PAYMENT_ID) 
+        //        LEFT OUTER JOIN CLIENTS C ON (I.CLIENT_ID = C.CLIENT_ID) 
+        //        LEFT OUTER JOIN COMPANIES COM ON (C.CLIENT_ID = COM.CLIENT_ID) 
+        //        LEFT OUTER JOIN INDIVIDUALS IND ON (C.CLIENT_ID = IND.CLIENT_ID) 
+        //        LEFT OUTER JOIN EMPLOYEES E ON (I.EMP_ID = E.EMP_ID) 
+        //    WHERE (&quot; PAID_OR_NOT & quot; = :PAID_OR_NOT) 
+
+        //    and ISSUE_DATE between " + TextBoxIssueDateStart.Text + " AND " +  TextBoxIssueDateEnd.Text  +
+
+        //    " ORDER BY INVOICE_NUMBER"
+        //    ;
 
         //Open up the connection
         con.Open();

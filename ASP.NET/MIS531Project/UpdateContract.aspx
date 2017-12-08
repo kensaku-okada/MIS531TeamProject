@@ -17,6 +17,8 @@
         <p style="text-align: center">Update the existing Contract data by clicking &quot; Edit &quot; or &quot; Delete &quot; under the table. 
         </p>
 
+        Contract ID<br />
+
         <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="True" DataSourceID="UpdateContractDropdownSQL" DataTextField="CONTRACT_ID" DataValueField="CONTRACT_ID">
         </asp:DropDownList>
         <asp:SqlDataSource ID="UpdateContractDropdownSQL" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject %>" ProviderName="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject.ProviderName %>" SelectCommand="SELECT DISTINCT * FROM &quot;CONTRACTS&quot; ORDER BY &quot;CONTRACT_ID&quot;"></asp:SqlDataSource>

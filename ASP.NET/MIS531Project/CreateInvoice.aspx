@@ -11,7 +11,7 @@
         <h1 class="auto-style1"><font size="7">Create Invoice</font></h1>
         <font size="5"><div class="tableNameTitle">Insert data into INVOICES table.</div></font> <br />
         
-        <p style="text-align: center">Inser the new invoice data by clicking &quot;New&quot; under the table.<br/>
+        <p>Insert the new invoice data by clicking &quot;New&quot; under the table.<br/>
             The total invoice amount is the total of  bill_amount,  disbursement_amount and typing_fee subtracting - withheld_income_tax <br/>
             For &quot;PAID_OR_NOT&quot;, please filling Y (paid already) or N (not paid yet). <br/>
             The format of ISSUE_DATE and DUE_DATE is DD-MMM-YYYY (e.g. 31-DEC-2017)<br /> 
@@ -89,7 +89,6 @@
                 </UpdateParameters>
             </asp:SqlDataSource>
         </asp:Panel>
-        <br />
         <br />
 
 

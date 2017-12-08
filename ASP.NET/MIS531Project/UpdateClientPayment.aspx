@@ -1,6 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="UpdateClientPayment.aspx.cs" Inherits="UpdateClientPayment" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .auto-style1 {
+            text-align: center;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
@@ -14,7 +19,9 @@
         You can check the payment ID on "View Payment" page. <br/>
     </p>
     <p>In "WITHHELD_TAX_PAID_BY", input only Client or Elite.</p>
+    
     <p>
+        Payment ID <br/>
         <asp:DropDownList ID="UpdateMoneyReceivedDropDown" runat="server" AutoPostBack="True" DataSourceID="UpdateMoneyReceivedDropDownSQL" DataTextField="PAYMENT_ID" DataValueField="PAYMENT_ID">
         </asp:DropDownList>
         <asp:SqlDataSource ID="UpdateMoneyReceivedDropDownSQL" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject %>" ProviderName="<%$ ConnectionStrings:ConnectionStringMIS531TeamProject.ProviderName %>" SelectCommand="SELECT DISTINCT * FROM &quot;MONEY_RECEIVED&quot; ORDER BY &quot;PAYMENT_ID&quot;"></asp:SqlDataSource>

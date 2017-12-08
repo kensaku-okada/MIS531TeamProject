@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <h1 class="auto-style1">Calculate taxable Revenue</h1>
+    <h1 class="auto-style1"><font size="7" style="text-align: center">Calculate taxable Revenue</font></h1>
     <p>&nbsp;Calculate the annual taxable revenue of Elite (money_received (amount Elite received from its client) - external_payment (amount Elite paid)) &nbsp;</p>
 
 

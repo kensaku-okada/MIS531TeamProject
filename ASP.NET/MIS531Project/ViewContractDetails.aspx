@@ -9,7 +9,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-        <h1 class="auto-style1"><font size="7" style="text-align: center">View Contract Detail</font>></h1>
+        <h1 class="auto-style1"><font size="7" style="text-align: center">View Contract Detail</font></h1>
+    <font size="5"><div class="tableNameTitle">View data on CONTRACT_DETAILS table.</div></font> <br />
     <p>
         View the contract details (each contract for each service)
 

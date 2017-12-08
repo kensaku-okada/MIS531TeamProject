@@ -14,7 +14,9 @@
         <font size="5">Insert data into PAYMENT table.</font></p>
     <p>
         Insert the infromation of the any payemnt which Elite receive or pay </br>
-        You can fill in records on Client Payment and "Payment Out" pages after inputing date here. 
+        You can fill in records on Client Payment and "Payment Out" pages after inputing date here. <br/>
+        The format of PAYMENT_DATE is DD-MMM-YYYY (e.g. 31-Dec-2017). <br/>
+        The unit of PAYMENT_AMOUNT is New Taiwan Dollar.
     </p>
     <p>
 

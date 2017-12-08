@@ -14,7 +14,8 @@
         <font size="5">Insert data into RECEIPTS table.</font></p>
     <p>
         Choose the delivery type from email, express, post and in person. <br />
-        The format of issue date is DD-MMM-YYYY (31-Dec-2017).
+        The format of issue date is DD-MMM-YYYY (31-Dec-2017). <br/>
+        The delivery type should be chosen from email, express, post, and in person.
     </p>
 
     <asp:DetailsView ID="CreateReceiptDetailedView" runat="server" Height="50px" Width="125px" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="RECEIPT_ID" DataSourceID="CreateReceiptSQL" ForeColor="#333333" GridLines="None" HorizontalAlign="Center">

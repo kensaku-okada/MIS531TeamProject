@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <h1 class="auto-style1">Calculate withheld tax</h1>
+    <h1 class="auto-style1"><font size="7" style="text-align: center">Calculate withheld tax</font></h1>
     <p>&nbsp;Calculate the montly withheld tax amount &nbsp;</p>
 
 
@@ -20,9 +20,6 @@
             </SelectParameters>
         </asp:SqlDataSource>
     </p>
-<p> 
-    <asp:Button ID="RefreshWidhheldTaxResult" runat="server" OnClick="RefreshWidhheldTaxResult_Click" Text="Refresh Table" />
-    (it does not work. Reload this page by entering the URL.)</p>
     <p>
         <asp:GridView ID="WithHeldTaxGridView" runat="server" HorizontalAlign="Center" OnSelectedIndexChanged="WithHeldTaxIncomeGridView_SelectedIndexChanged" AllowPaging="True" AllowSorting="True" DataSourceID="calculate_withheld_tax_grid_viewSQL" AutoGenerateColumns="False" CellPadding="4" ForeColor="#333333" GridLines="None" PageSize="50">
             <AlternatingRowStyle BackColor="White" />

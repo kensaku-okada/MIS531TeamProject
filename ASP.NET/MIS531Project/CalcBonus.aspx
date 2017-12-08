@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 
-    <h1 class="auto-style1">Calculate Bonus</h1>
+    <h1 class="auto-style1"><font size="7" style="text-align: center">Calculate Bonus</font></h1>
     <p>&nbsp;Calculate the quarterly bonus payment to employees &nbsp;</p>
     Year (YYYY)<br />
     <asp:TextBox ID="YearTextBox" runat="server"></asp:TextBox>
